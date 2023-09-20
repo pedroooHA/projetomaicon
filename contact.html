@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contate-nos</title>
     <style>
-        /* Estilos para o cabeçalho (reutilizado) */
+        
         .header {
             position: fixed;
             top: 0;
@@ -17,7 +17,7 @@
             z-index: 1000;
         }
 
-        /* Estilos para os botões no cabeçalho (reutilizado) */
+        
         .header a {
             color: white;
             text-decoration: none;
@@ -29,7 +29,7 @@
             background-attachment: fixed; 
             background-repeat: no-repeat; 
         }
-        /* Estilos para o formulário de contato */
+       
         .form-container {
             text-align: center;
             margin: 80px auto;
@@ -63,7 +63,7 @@
             cursor: pointer;
         }
 
-        /* Estilos para a mensagem de agradecimento */
+        
         .thank-you {
             text-align: center;
             font-size: 24px;
@@ -101,11 +101,11 @@
     </div>
 
     <script>
-        // Manipulação do formulário para exibir a mensagem de agradecimento
+        
         document.getElementById("contact-form").addEventListener("submit", function (e) {
-            e.preventDefault(); // Impede o envio padrão do formulário
-            document.getElementById("contact-form").style.display = "none"; // Esconde o formulário
-            document.getElementById("thank-you-message").style.display = "block"; // Exibe a mensagem de agradecimento
+            e.preventDefault(); 
+            document.getElementById("contact-form").style.display = "none"; 
+            document.getElementById("thank-you-message").style.display = "block"; 
         });
     </script>
 </body>
