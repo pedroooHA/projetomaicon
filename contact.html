@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contate-nos</title>
+    <style>
+        /* Estilos para o cabeçalho (reutilizado) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Estilos para os botões no cabeçalho (reutilizado) */
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        body {
+            background-image: url('A:allback.jpg'); 
+            background-size: cover; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+        }
+        /* Estilos para o formulário de contato */
+        .form-container {
+            text-align: center;
+            margin: 80px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            background-color: #7f00b2;
+            color: #FFF;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Estilos para a mensagem de agradecimento */
+        .thank-you {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="main.html">Home</a>
+        <a href="about.html">Sobre Nós</a>
+        <a href="simplepost.html">Formulário</a>
+        <a href="contact.html">Contate-nos</a>
+    </div>
+
+    <div class="form-container">
+        <h1>Contate-nos</h1>
+        <form id="contact-form">
+            <label class="form-label" for="phone">Número de Telefone:</label>
+            <input class="form-input" type="tel" id="phone" name="phone" required>
+
+            <label class="form-label" for="email">Endereço de E-mail:</label>
+            <input class="form-input" type="email" id="email" name="email" required>
+
+            <label class="form-label" for="message">Mensagem:</label>
+            <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
+
+            <button class="form-button" type="submit">Enviar</button>
+        </form>
+
+        <div class="thank-you" id="thank-you-message">
+            Obrigado por entrar em contato conosco!
+        </div>
+    </div>
+
+    <script>
+        // Manipulação do formulário para exibir a mensagem de agradecimento
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
+            document.getElementById("contact-form").style.display = "none"; // Esconde o formulário
+            document.getElementById("thank-you-message").style.display = "block"; // Exibe a mensagem de agradecimento
+        });
+    </script>
+</body>
+</html>

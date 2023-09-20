@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        /* Estilos para o cabeçalho */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000; /* Para garantir que o cabeçalho fique em cima de outros elementos */
+        }
+
+        /* Estilos para os botões no cabeçalho */
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px; /* Espaçamento entre os botões */
+        }
+        body {
+            background-image: url('A:allback.jpg'); 
+            background-size: cover; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+        }
+        .center {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px; 
+            padding: 20px;
+        } 
+        body, h3, p {
+            background-color: rgba(0, 0, 0, 0.8); 
+            padding: 10px; 
+            text-shadow: 2px 2px 4px rgba(128, 0, 128, 0.7); 
+            color: white; 
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .form-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7f00b2;
+            color: #FFF;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #5b0089;
+        }
+        .message {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001; /* Para garantir que a mensagem apareça acima de outros elementos */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="main.html">Home</a>
+        <a href="about.html">Sobre Nós</a>
+        <a href="simplepost.html">Formulário</a>
+        <a href="contact.html">Contate-nos</a>
+    </div>
+    <div class="center">
+        <div class="form-container">
+            <h1>Formulário</h1>
+            <form id="character-form" enctype="multipart/form-data">
+                <label class="form-label" for="character-name">Nome do Personagem:</label>
+                <input class="form-input" type="text" id="character-name" name="character-name" required>
+                
+                <label class="form-label" for="character-info">Informações Pessoais:</label>
+                <textarea class="form-input" id="character-info" name="character-info" rows="4" required></textarea>
+        
+                <label class="form-label" for="character-gif">Anexar GIF de Habilidade:</label>
+                <input class="form-input" type="file" id="character-gif" name="character-gif" accept=".gif" required>
+        
+                <div class="form-options">
+                    <label class="form-label">Possui Expansão de Domínio?Se possui Expansão de Domínio, por favor, adicione-a acima no anexo.</label>
+                    <input class="form-input" type="radio" id="expansion-yes" name="expansion" value="yes" required>
+                    <label for="expansion-yes">Sim</label>
+                    <input class="form-input" type="radio" id="expansion-no" name="expansion" value="no" required>
+                    <label for="expansion-no">Não</label>
+                </div>
+        
+                <button class="form-button" type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <!-- Mensagem de Agradecimento -->
+        <div class="message" id="thank-you-message">
+            <h2>Obrigado pelo envio!</h2>
+            <p>Sua informação foi recebida com sucesso.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para exibir a mensagem de agradecimento após o envio do formulário
+        document.getElementById('character-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('thank-you-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
